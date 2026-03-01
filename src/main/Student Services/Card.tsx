@@ -25,35 +25,35 @@ const CardCustom: FC<CardCustomProps> = () => {
     }, {
         heding: "Student Portal",
         description: "Complete dashboard with results, attendance, and performance analytics",
-        icon: <PermIdentityIcon sx={{ fontSize: 60 }} />,
+        icon: <PermIdentityIcon sx={{ fontSize: 45 }} />,
         bgColor: true,
         link: "/",
         buttonText: "Login Now"
     }, {
         heding: "Academic Excellence",
         description: "Quality education with comprehensive curriculum",
-        icon: <SchoolIcon sx={{ fontSize: 60, color: FontColor }} />,
+        icon: <SchoolIcon sx={{ fontSize: 45, color: FontColor }} />,
         bgColor: false,
         link: "/",
         buttonText: "Check Now"
     }, {
         heding: "Expert Faculty",
         description: "Experienced and dedicated teaching staff",
-        icon: <PeopleIcon sx={{ fontSize: 60 }} />,
+        icon: <PeopleIcon sx={{ fontSize: 45 }} />,
         bgColor: false,
         link: "/",
         buttonText: "Check Now"
     }, {
         heding: "Achievement Track",
         description: "Proven track record of student success",
-        icon: <EmojiEventsIcon sx={{ fontSize: 60, color: FontColororange }} />,
+        icon: <EmojiEventsIcon sx={{ fontSize: 45, color: FontColororange }} />,
         bgColor: false,
         link: "/",
         buttonText: "Check Now"
     }, {
         heding: "Digital Learning",
         description: "Modern technology-enabled education",
-        icon: <LocalLibraryIcon sx={{ fontSize: 60, color: FontColor }} />,
+        icon: <LocalLibraryIcon sx={{ fontSize: 45, color: FontColor }} />,
         bgColor: false,
         link: "/",
         buttonText: "Check Now"

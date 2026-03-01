@@ -8,10 +8,10 @@ interface StudentServicesProps { }
 const StudentServices: FC<StudentServicesProps> = () => {
 
     return (<>
-        <Typography align="center" marginTop={5} fontFamily="Lexend , sans-serif " style={{ fontWeight: 700, fontSize: 28, color: `${FontColor}` }}  >
+        <Typography align="center" marginTop={3} fontFamily="Lexend , sans-serif " style={{ fontWeight: 700, fontSize: 28, color: `${FontColor}` }}  >
             Student Services
         </Typography>
-        <Typography fontFamily={"math"} variant="h6" align="center" marginTop={2} color={FontColor}>
+        <Typography fontFamily={"math"}  align="center" marginTop={1} color={FontColor}>
             Access your academic information and student dashboard
         </Typography>
         {/* Cards */}
