@@ -29,7 +29,7 @@ const SliderImages = () => {
         <div style={{ display: "flex", justifyContent: "center", }}>
           <SimpleImageSlider  style={{ borderRadius:50}}
             width={"90%"}
-            
+            bgColor="#0000"
             height={"50VH"}
             images={images}
             showBullets={true}

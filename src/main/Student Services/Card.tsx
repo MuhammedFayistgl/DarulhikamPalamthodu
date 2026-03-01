@@ -18,7 +18,7 @@ const CardCustom: FC<CardCustomProps> = () => {
     const dataCard = [{
         heding: "Quick Result Check",
         description: "Choose your class and check your result instantly",
-        icon: <MilitaryTechIcon sx={{ fontSize: 60 }} />,
+        icon: <MilitaryTechIcon sx={{ fontSize: 45 }} />,
         bgColor: true,
         link: "/Result",
         buttonText: "Check Now"
@@ -108,13 +108,14 @@ const CardCustom: FC<CardCustomProps> = () => {
                 )
             })} */}
 
-            <Flex wrap="wrap" justify="center" gap={4} style={{ marginTop: 50 }}>
+            <Flex wrap="wrap" justify="center" gap={4} style={{ marginTop: 0 }}>
                 {dataCard.map((card, index) => {
                     return (<>
 
                         <Card hoverable id={`card-${index}`} className="card-custom" style={{
-                            maxWidth: 500, maxHeight: 400, marginLeft: 'auto', marginRight: 'auto', marginTop: 20,
-                            padding: 0, alignContent: "center",
+                            maxWidth: 400, maxHeight: 300,  marginTop: 20,
+                            // minHeight:20,minWidth:100,
+                            paddingBottom: 0, alignContent: "center",
                             boxShadow: ' 10px 10px 20px #fafafa  , -10px -10px 20px #eeeded',
                             // "&:hover": {
                             //     boxShadow: ' 10px 10px 20px #e6e2e2  , -10px -10px 20px #e4e3e3',
@@ -125,9 +126,9 @@ const CardCustom: FC<CardCustomProps> = () => {
 
 
                             </div> */}
-                            <div style={{ display: "flex", flexDirection: "column", width: 400, height: 300, justifyContent: "center", alignItems: "center", color: FontColorGreen }}>
+                            <div style={{ display: "flex", flexDirection: "column",  justifyContent: "center", alignItems: "center", color: FontColorGreen }}>
 
-                                <Card style={{ textAlign: "center", margin: "auto", background: card.bgColor ? 'rgb(203, 253, 214)' : 'transparent', border: 'none', color: FontColorGreen }}> {card.icon}</Card>
+                                <div style={{ padding:15,borderRadius:10, textAlign: "center", background: card.bgColor ? 'rgb(203, 253, 214)' : 'transparent', border: 'none', color: FontColorGreen ,}}> {card.icon}</div>
                                 <Typography sx={{ marginTop: 2, color: FontColor }} variant="h5" fontWeight={700} marginLeft={2} >{card.heding}</Typography>
                                 <Typography fontWeight={300} sx={{ width: "80%", textAlign: "center", marginTop: 2 }} color={FontColor}  >{card.description}</Typography>
                                 <Button endIcon={<ArrowForwardIcon />} color={"success"} sx={{ marginTop: 2 }} >
