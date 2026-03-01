@@ -15,7 +15,7 @@ function App() {
       <ResponsiveAppBar />
       <Routes >
         <Route path="/" element={<Home />} />
-        <Route path="/School-Websit" element={<Home />} />
+        <Route path="/DarulhikamPalamthodu" element={<Home />} />
         <Route path="/Result" element={<Result />} />
 
       </Routes>
