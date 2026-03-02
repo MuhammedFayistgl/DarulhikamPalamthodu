@@ -22,7 +22,7 @@ export const STUDENTS_DATA = [
     {
         "No": "",
         "id": 3,
-        "studentName": "Muhammad Irfan N",
+        "studentName": "Muhammed Irfan N",
         "currentClass": "1",
         "promotedTo": "2",
         "marks": 0,
@@ -49,7 +49,7 @@ export const STUDENTS_DATA = [
     {
         "No": "",
         "id": 6,
-        "studentName": "Muhammad Raseen N",
+        "studentName": "Muhammed Raseen N",
         "currentClass": "1",
         "promotedTo": "2",
         "marks": 0,
@@ -58,7 +58,7 @@ export const STUDENTS_DATA = [
     {
         "No": "",
         "id": 7,
-        "studentName": "Muhammad Haiseen KP",
+        "studentName": "Muhammed Hayzin KP",
         "currentClass": "1",
         "promotedTo": "2",
         "marks": 0,
@@ -67,7 +67,7 @@ export const STUDENTS_DATA = [
     {
         "No": "",
         "id": 8,
-        "studentName": "Muhammad Ramsan P",
+        "studentName": "Muhammed Ramzan P",
         "currentClass": "1",
         "promotedTo": "2",
         "marks": 0,
@@ -78,7 +78,7 @@ export const STUDENTS_DATA = [
     {
         "No": "",
         "id": 9,
-        "studentName": "Fathima Faiza N",
+        "studentName": "Fathima Fayiza N",
         "currentClass": "1",
         "promotedTo": "2",
         "marks": 0,
@@ -230,7 +230,7 @@ export const STUDENTS_DATA = [
     {
         "No": "",
         "id": 25,
-        "studentName": "Muhammad Shamil K",
+        "studentName": "Muhammed Shamil K",
         "currentClass": "2",
         "promotedTo": "3",
         "marks": 0,
@@ -248,7 +248,7 @@ export const STUDENTS_DATA = [
     {
         "No": "",
         "id": 27,
-        "studentName": "Muhammad Shahid N",
+        "studentName": "Muhammed Shahid N",
         "currentClass": "2",
         "promotedTo": "3",
         "marks": 0,
@@ -257,7 +257,7 @@ export const STUDENTS_DATA = [
     {
         "No": "",
         "id": 28,
-        "studentName": "Muhammad Rajih P",
+        "studentName": "Muhammed Rajih P",
         "currentClass": "2",
         "promotedTo": "3",
         "marks": 0,
@@ -950,6 +950,15 @@ export const STUDENTS_DATA = [
         "No": "",
         "id": 77,
         "studentName": "Izza Fathima N",
+        "currentClass": "4",
+        "promotedTo": "5",
+        "marks": 0,
+        "certificateUrl": "/certificates/izza-fathima-n.pdf"
+    },
+     {
+        "No": "",
+        "id": 77,
+        "studentName": "FATHIMA AMAL P",
         "currentClass": "4",
         "promotedTo": "5",
         "marks": 0,

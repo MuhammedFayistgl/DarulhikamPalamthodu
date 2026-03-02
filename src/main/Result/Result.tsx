@@ -33,6 +33,7 @@ import autoTable from 'jspdf-autotable';
 
 
 
+
 interface ResultProps { }
 
 const Result: FC<ResultProps> = () => {
@@ -126,7 +127,7 @@ const Result: FC<ResultProps> = () => {
             {
                 accessorKey: 'No', //access nested data with dot notation
                 header: 'No',
-                size: 10,
+                size: 0,
             },
             {
                 accessorKey: 'studentName',
@@ -138,7 +139,7 @@ const Result: FC<ResultProps> = () => {
                 accessorKey: 'currentClass', //normal accessorKey
                 header: 'Class',
                 size: 10,
-                Cell: ({ cell }: { cell: MRT_Cell<any> }) => <>  {romanize(cell.getValue() as number)} <ArrowRightOutlined style={{ color: '#249b00' }} /></>,
+                Cell: ({ cell }: { cell: MRT_Cell<any> }) => <>  {romanize(cell.getValue() as number)}    <ArrowRightOutlined style={{ color: '#249b00' }} /></>,
             },
             {
                 accessorKey: 'promotedTo',
@@ -148,10 +149,10 @@ const Result: FC<ResultProps> = () => {
 
             },
             {
-                accessorKey: 'certificate',
-                header: 'Certificate',
+                accessorKey: 'Status',
+                header: 'Status',
                 size: 10,
-                Cell: () => <> <NavLink to="/"><Button>{"Certificate"}<EyeOutlined style={{ color: '#249b00' }} /></Button>  </NavLink></>,
+                Cell: () => <> <NavLink to="/Status"><Button>{"Status"}<EyeOutlined style={{ color: '#249b00' }} /></Button>  </NavLink></>,
             },
         ],
         [],
@@ -175,7 +176,15 @@ const Result: FC<ResultProps> = () => {
         initialState: {
             pagination: { pageSize: 50, pageIndex: 0 },
             showGlobalFilter: false,
+
+
+
         },
+        // enableKeyboardShortcuts: false,
+        enableColumnActions: false,
+        // enableColumnFilters: false,
+        enablePagination: false,
+        enableSorting: false,
         // muiPaginationProps: {
         //     rowsPerPageOptions: [50],
         //     variant: 'outlined',
@@ -192,6 +201,7 @@ const Result: FC<ResultProps> = () => {
                     flexWrap: 'wrap',
                 }}
             >
+               
                 <Button
                     disabled={table.getPrePaginationRowModel().rows.length === 0}
                     //export all rows, including from the next page, (still respects filtering and sorting)

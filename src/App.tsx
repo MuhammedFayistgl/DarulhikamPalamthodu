@@ -6,17 +6,19 @@ import Home from './main/Home/Home';
 import { Routes, Route } from "react-router";
 import Result from './main/Result/Result';
 import ResponsiveAppBar from './header/AppBar';
+import Certificate from './main/Status/Status';
 
 function App() {
 
 
   return (
     <>
-      <ResponsiveAppBar />
+      {/* <ResponsiveAppBar /> */}
       <Routes >
         <Route path="/" element={<Home />} />
         <Route path="/DarulhikamPalamthodu" element={<Home />} />
         <Route path="/Result" element={<Result />} />
+        <Route path="/Status" element={<Certificate />} />
 
       </Routes>
 
