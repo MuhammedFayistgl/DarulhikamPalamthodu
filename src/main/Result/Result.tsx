@@ -9,7 +9,7 @@ import { SyncOutlined } from '@ant-design/icons';
 import React from 'react';
 import { Select } from 'antd';
 import { upperCase } from "text-upper-case";
-
+import { romanize } from "@charmingdc/romanify";
 
 import { ArrowRightOutlined, EyeOutlined } from '@ant-design/icons';
 
@@ -107,10 +107,7 @@ const Result: FC<ResultProps> = () => {
         label: '2026',
     }]
     const onSubmit = () => {
-        console.log('OnSummit Call--=-=-', tableData);
         setLoading(true);
-
-
         // Then in onSubmit:
         const timeoutId = setTimeout(() => {
             selectedClass
@@ -118,7 +115,6 @@ const Result: FC<ResultProps> = () => {
                 : setTableData([]);
             setLoading(false);
             clearTimeout(timeoutId);
-            console.log('OnSummit Call End__', tableData);
         }, 2000);
 
 
@@ -136,18 +132,20 @@ const Result: FC<ResultProps> = () => {
                 accessorKey: 'studentName',
                 header: 'Student Name',
                 size: 150,
-                Cell: ({ cell }) => <Title level={5} >{upperCase(cell.getValue() as string)}</Title> ,
+                Cell: ({ cell }) => <Title level={5} >{upperCase(cell.getValue() as string)}</Title>,
             },
             {
                 accessorKey: 'currentClass', //normal accessorKey
                 header: 'Class',
                 size: 10,
-                Cell: ({ cell }: { cell: MRT_Cell<any> }) => <>  {cell.getValue()} <ArrowRightOutlined style={{ color: '#249b00' }} /></>,
+                Cell: ({ cell }: { cell: MRT_Cell<any> }) => <>  {romanize(cell.getValue() as number)} <ArrowRightOutlined style={{ color: '#249b00' }} /></>,
             },
             {
                 accessorKey: 'promotedTo',
                 header: 'Promoted To',
                 size: 10,
+                Cell: ({ cell }: { cell: MRT_Cell<any> }) => <>  {romanize(cell.getValue() as number)} </>,
+
             },
             {
                 accessorKey: 'certificate',
@@ -174,10 +172,10 @@ const Result: FC<ResultProps> = () => {
     const table = useMaterialReactTable({
         columns: columns,
         // enableRowSelection: true,
-    initialState: {
-      pagination: { pageSize: 50, pageIndex: 0 },
-      showGlobalFilter: false,
-    },
+        initialState: {
+            pagination: { pageSize: 50, pageIndex: 0 },
+            showGlobalFilter: false,
+        },
         // muiPaginationProps: {
         //     rowsPerPageOptions: [50],
         //     variant: 'outlined',

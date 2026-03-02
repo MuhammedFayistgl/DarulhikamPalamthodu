@@ -11,8 +11,9 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import { Container, List, ListItem, ListItemText } from '@mui/material';
+import { Link } from 'react-router';
 
-const pages = ['Products', 'Pricing', 'Blog'];
+const pages = [{ name: 'Quick Result Check', RouteTo: '/Result' }, { name: 'Student Portal', RouteTo: '/' }, { name: 'Academic Excellence', RouteTo: '/' }, { name: "Expert Faculty", RouteTo: '/' }, { name: "Achievement Track", RouteTo: '/' }];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 
@@ -67,8 +68,16 @@ function ResponsiveAppBar() {
               sx={{ display: { xs: 'block', md: 'none' } }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography sx={{ textAlign: 'center' }}>{page}</Typography>
+
+                <MenuItem key={page.name} onClick={handleCloseNavMenu}>
+                  <Typography sx={{ textAlign: 'center', color: 'GrayText' }}>{
+                    <Link to={page.RouteTo}>
+                      {page.name}
+                    </Link>
+
+
+
+                  }</Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -76,25 +85,28 @@ function ResponsiveAppBar() {
 
           <List>
             <ListItem>
-              <ListItemText primary="DARULHIKAM " secondary="SECONDARY MADRASA" primaryTypographyProps={{ fontWeight: 900, variant: 'h6', color: 'primary' }} />
+              <Link to="/" >
+                <ListItemText primary="DARULHIKAM " secondary="SECONDARY MADRASA" primaryTypographyProps={{ fontWeight: 900, variant: 'h6', color: 'primary' }} />
+              </Link>
             </ListItem>
           </List>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
               <Button
-                key={page}
+                key={page.name}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'black', display: 'block' }}
-              >
-                {page}
+              ><Link to={page.RouteTo}>
+                  {page.name}
+                </Link>
               </Button>
             ))}
           </Box>
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Eemy Sharp" src="src/assets/b.jpeg" />
+                <Avatar alt="Eemy Sharp" src="https://i.ibb.co/23QxcgFb/b.jpg" />
 
               </IconButton>
             </Tooltip>

@@ -1166,7 +1166,7 @@ export const STUDENTS_DATA = [
     {
         "No": "",
         "id": 77,
-        "studentName": "Saila Fathima C",
+        "studentName": "Naila Fathima C",
         "currentClass": "8",
         "promotedTo": "9",
         "marks": 0,
@@ -1193,7 +1193,7 @@ export const STUDENTS_DATA = [
     {
         "No": "",
         "id": 77,
-        "studentName": "Rahfath P",
+        "studentName": "Rahfa P",
         "currentClass": "8",
         "promotedTo": "9",
         "marks": 0,
