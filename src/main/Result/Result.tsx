@@ -2,12 +2,13 @@ import { List, ListItem, ListItemText } from '@mui/material';
 import type { FC } from 'react';
 import MilitaryTechIcon from '@mui/icons-material/MilitaryTech';
 import { FontColor } from '../../CONTENT/Constent';
-import { Button, Cascader, Divider, Input } from 'antd';
+import { Button, Cascader, Divider, Input, Typography } from 'antd';
+const { Title } = Typography;
 import { Card, } from 'antd';
 import { SyncOutlined } from '@ant-design/icons';
 import React from 'react';
 import { Select } from 'antd';
-
+import { upperCase } from "text-upper-case";
 
 
 import { ArrowRightOutlined, EyeOutlined } from '@ant-design/icons';
@@ -108,7 +109,7 @@ const Result: FC<ResultProps> = () => {
     const onSubmit = () => {
         console.log('OnSummit Call--=-=-', tableData);
         setLoading(true);
-       
+
 
         // Then in onSubmit:
         const timeoutId = setTimeout(() => {
@@ -135,6 +136,7 @@ const Result: FC<ResultProps> = () => {
                 accessorKey: 'studentName',
                 header: 'Student Name',
                 size: 150,
+                Cell: ({ cell }) => <Title level={5} >{upperCase(cell.getValue() as string)}</Title> ,
             },
             {
                 accessorKey: 'currentClass', //normal accessorKey
@@ -171,6 +173,16 @@ const Result: FC<ResultProps> = () => {
     };
     const table = useMaterialReactTable({
         columns: columns,
+        // enableRowSelection: true,
+    initialState: {
+      pagination: { pageSize: 50, pageIndex: 0 },
+      showGlobalFilter: false,
+    },
+        // muiPaginationProps: {
+        //     rowsPerPageOptions: [50],
+        //     variant: 'outlined',
+        // },
+        // paginationDisplayMode: 'pages',
         data: STUDENTS_DATA.filter(student => student.currentClass === tableData?.[0]).map((student, index) => ({ ...student, No: index + 1 })), //data must be memoized or stable (useState, useMemo, defined outside of this component, etc.)
 
         renderTopToolbarCustomActions: ({ table }) => (
