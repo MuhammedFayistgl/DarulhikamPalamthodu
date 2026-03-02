@@ -87,7 +87,7 @@ export const STUDENTS_DATA = [
     {
         "No": "",
         "id": 10,
-        "studentName": "Leya Mehbin K",
+        "studentName": "Liya Mehbin K",
         "currentClass": "1",
         "promotedTo": "2",
         "marks": 0,
@@ -105,7 +105,7 @@ export const STUDENTS_DATA = [
     {
         "No": "",
         "id": 12,
-        "studentName": "Fahim Nasrin MV",
+        "studentName": "fahima nasrin MV",
         "currentClass": "1",
         "promotedTo": "2",
         "marks": 0,
@@ -195,7 +195,7 @@ export const STUDENTS_DATA = [
     {
         "No": "",
         "id": 22,
-        "studentName": "Insha Khamar T",
+        "studentName": "Insha Qamar T",
         "currentClass": "1",
         "promotedTo": "2",
         "marks": 0,
@@ -689,7 +689,7 @@ export const STUDENTS_DATA = [
     },
     {
         "id": 72,
-        "studentName": "Muammed Rasi T",
+        "studentName": "Muammed Razi T",
         "currentClass": "4",
         "promotedTo": "5",
         "marks": 0,
@@ -745,7 +745,7 @@ export const STUDENTS_DATA = [
     },
     {
         "id": 72,
-        "studentName": "Sayan PC ",
+        "studentName": "Zayan PC ",
         "currentClass": "4",
         "promotedTo": "5",
         "marks": 0,
@@ -753,7 +753,7 @@ export const STUDENTS_DATA = [
     },
     {
         "id": 72,
-        "studentName": "Hanan Yaseen T ",
+        "studentName": "Hanan Yasir T ",
         "currentClass": "4",
         "promotedTo": "5",
         "marks": 0,
@@ -792,7 +792,7 @@ export const STUDENTS_DATA = [
         "certificateUrl": "/certificates/muhammad-mazin.pdf"
     }, {
         "id": 72,
-        "studentName": "Muhammed Nasal VK",
+        "studentName": "Muhammed Nazal VK",
         "currentClass": "4",
         "promotedTo": "5",
         "marks": 0,
@@ -868,7 +868,7 @@ export const STUDENTS_DATA = [
     {
         "No": "",
         "id": 68,
-        "studentName": "Fathima Hib T.T",
+        "studentName": "Fathima Hiba T.T",
         "currentClass": "4",
         "promotedTo": "5",
         "marks": 0,
@@ -895,7 +895,7 @@ export const STUDENTS_DATA = [
     {
         "No": "",
         "id": 71,
-        "studentName": "Sana Miyyas T.K",
+        "studentName": "Sana Miyyaza T.K",
         "currentClass": "4",
         "promotedTo": "5",
         "marks": 0,
@@ -922,7 +922,7 @@ export const STUDENTS_DATA = [
     {
         "No": "",
         "id": 74,
-        "studentName": "Risa Afrin P.C",
+        "studentName": "Riza Afril P.C",
         "currentClass": "4",
         "promotedTo": "5",
         "marks": 0,
@@ -931,7 +931,7 @@ export const STUDENTS_DATA = [
     {
         "No": "",
         "id": 75,
-        "studentName": "Shahma Jabeen P.K",
+        "studentName": "Shahma Jabin P.K",
         "currentClass": "4",
         "promotedTo": "5",
         "marks": 0,
@@ -940,7 +940,7 @@ export const STUDENTS_DATA = [
     {
         "No": "",
         "id": 76,
-        "studentName": "Khadeeja Fils V",
+        "studentName": "Khadeeja Filza V",
         "currentClass": "4",
         "promotedTo": "5",
         "marks": 0,
@@ -988,7 +988,7 @@ export const STUDENTS_DATA = [
     {
         "No": "",
         "id": 77,
-        "studentName": "Muhammed Rabeh P",
+        "studentName": "Muhammed Rabeeh P",
         "currentClass": "6",
         "promotedTo": "7",
         "marks": 0,
@@ -1072,7 +1072,7 @@ export const STUDENTS_DATA = [
     {
         "No": "",
         "id": 77,
-        "studentName": "Qadeeja Sherin V",
+        "studentName": "khadeeja Sherin V",
         "currentClass": "6",
         "promotedTo": "7",
         "marks": 0,
@@ -1081,7 +1081,7 @@ export const STUDENTS_DATA = [
     {
         "No": "",
         "id": 77,
-        "studentName": "Niya Nasin MP",
+        "studentName": "Niya Nasrin MP",
         "currentClass": "6",
         "promotedTo": "7",
         "marks": 0,
