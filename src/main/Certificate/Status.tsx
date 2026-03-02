@@ -2,9 +2,9 @@ import { DownloadOutlined, UploadOutlined } from "@ant-design/icons";
 import { Button, Card, Image, Typography, Upload } from "antd";
 import type { FC } from "react";
 import { useParams } from "react-router";
-import React, { useRef } from "react";
+import { useRef } from "react";
 import html2canvas from "html2canvas";
-
+import { titleCase } from "text-case";
 
 interface CertificateProps { }
 
@@ -56,8 +56,8 @@ const Certificate: FC<CertificateProps> = () => {
                 />
                 <div style={{ position: 'absolute', top: '70%', left: '20%', }}>
 
-                    <Typography style={{ fontFamily: 'custom-font', fontSize: "5vw" }}>
-                        {para?.userName} </Typography>
+                    <Typography style={{ fontFamily: 'custom-font', fontSize: "7vw" }}>
+                        {titleCase(para?.userName || "")} </Typography>
                 </div>
             </div>
 
