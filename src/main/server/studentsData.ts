@@ -547,7 +547,7 @@ export const STUDENTS_DATA = [
         "certificateUrl": "/certificates/muhammad-shayan.pdf"
     }, {
         "id": 61,
-        "studentName": "Muhammad Fareedudeen E",
+        "studentName": "Muhammad Fareedudheen E",
         "currentClass": "3",
         "promotedTo": "4",
         "marks": 0,
