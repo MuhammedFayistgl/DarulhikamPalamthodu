@@ -13,7 +13,7 @@ function App() {
 
   return (
     <>
-      {/* <ResponsiveAppBar /> */}
+      <ResponsiveAppBar />
       <Routes >
         <Route path="/" element={<Home />} />
         <Route path="/DarulhikamPalamthodu" element={<Home />} />
