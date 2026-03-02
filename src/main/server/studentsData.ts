@@ -493,7 +493,7 @@ export const STUDENTS_DATA = [
     },
     {
         "id": 54,
-        "studentName": "Muhammad Abdurrab T",
+        "studentName": "Muhammad Abdu rabb T",
         "currentClass": "3",
         "promotedTo": "4",
         "marks": 0,
@@ -533,7 +533,7 @@ export const STUDENTS_DATA = [
     },
     {
         "id": 59,
-        "studentName": "Muhammad Raseen N",
+        "studentName": "Muhammad Razeen N",
         "currentClass": "3",
         "promotedTo": "4",
         "marks": 0,
