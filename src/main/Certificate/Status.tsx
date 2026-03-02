@@ -23,7 +23,7 @@ const Certificate: FC<CertificateProps> = () => {
             allowTaint: true
         });
 
-        const image = canvas.toDataURL("src\assets\Congratulations.jpg");
+        const image = canvas.toDataURL("https://res.cloudinary.com/dmlhzurnk/image/upload/v1772476002/Congratulations_rpp8aw.png");
 
         const link = document.createElement("a");
         link.href = image;
@@ -51,7 +51,7 @@ const Certificate: FC<CertificateProps> = () => {
                 <img
                     width={"100%"}
                     style={{ transition: 'all 0.3s ease', marginTop: '90px', backgroundImage: 'initial', position: 'relative' }}
-                    src="src\assets\Congratulations.jpg"
+                    src="https://res.cloudinary.com/dmlhzurnk/image/upload/v1772476002/Congratulations_rpp8aw.png"
                     alt="image this"
                 />
                 <div style={{ position: 'absolute', top: '70%', left: '20%', }}>
