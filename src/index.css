@@ -1,5 +1,14 @@
-
 @import "tailwindcss";
+
+@font-face {
+  font-family: custom-font;
+  src: url(../src/fonts/Photograph\ Signature.ttf);
+  format: ('truetype');
+}
+
+.custom-font {
+  font-family: custom-font;
+}
 
 /* .swiper {
   width: 600px;

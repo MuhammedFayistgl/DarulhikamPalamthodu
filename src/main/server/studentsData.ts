@@ -1006,7 +1006,7 @@ export const STUDENTS_DATA = [
     {
         "No": "",
         "id": 77,
-        "studentName": "Muhammed Shifin K",
+        "studentName": "Muhammed Shifin P",
         "currentClass": "6",
         "promotedTo": "7",
         "marks": 0,
@@ -1060,7 +1060,7 @@ export const STUDENTS_DATA = [
     {
         "No": "",
         "id": 77,
-        "studentName": "Muhammed Muneef MT",
+        "studentName": "Muhammed Muneef NT",
         "currentClass": "6",
         "promotedTo": "7",
         "marks": 0,
@@ -1072,7 +1072,7 @@ export const STUDENTS_DATA = [
     {
         "No": "",
         "id": 77,
-        "studentName": "Fathima Risha C",
+        "studentName": "Fathima Rinsha C",
         "currentClass": "6",
         "promotedTo": "7",
         "marks": 0,

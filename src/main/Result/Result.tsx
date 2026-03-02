@@ -152,7 +152,7 @@ const Result: FC<ResultProps> = () => {
                 accessorKey: 'Status',
                 header: 'Status',
                 size: 10,
-                Cell: () => <> <NavLink to="/Status"><Button>{"Status"}<EyeOutlined style={{ color: '#249b00' }} /></Button>  </NavLink></>,
+                Cell: ({ cell }) => <> <NavLink to={`/Status/${cell.row.original?.studentName}`}><Button>{"Status"}<EyeOutlined style={{ color: '#249b00' }} /></Button>  </NavLink></>,
             },
         ],
         [],
@@ -201,7 +201,7 @@ const Result: FC<ResultProps> = () => {
                     flexWrap: 'wrap',
                 }}
             >
-               
+
                 <Button
                     disabled={table.getPrePaginationRowModel().rows.length === 0}
                     //export all rows, including from the next page, (still respects filtering and sorting)
