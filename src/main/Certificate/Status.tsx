@@ -16,24 +16,119 @@ const Certificate: FC<CertificateProps> = () => {
     console.log("imageUrl", imageUrl);
 
     const para = useParams()
-    const captureRef = useRef(null);
+    const captureRef = useRef<HTMLDivElement | null>(null);
 
-    const handleDownload = async () => {
+
+    // const handleDownload = async (): Promise<void> => {
+    //     try {
+    //         if (!captureRef.current) return;
+
+    //         const element = captureRef.current;
+
+    //         // 1️⃣ Measure current rendered size
+    //         const rect = element.getBoundingClientRect();
+    //         const currentWidth = rect.width;
+
+    //         // 2️⃣ Target A4 300 DPI width
+    //         const targetWidth = 2480; // A4 width in pixels (300 DPI)
+
+    //         // 3️⃣ Calculate dynamic scale (keeps exact layout ratio)
+    //         const scaleFactor = targetWidth / currentWidth;
+
+    //         // 4️⃣ Capture without modifying UI
+    //         const canvas = await html2canvas(element, {
+    //             scale: scaleFactor,
+    //             useCORS: true,
+    //             allowTaint: false,
+    //             backgroundColor: "#ffffff",
+    //             imageTimeout: 0,
+    //             logging: false,
+    //             windowWidth: document.documentElement.scrollWidth,
+    //             windowHeight: document.documentElement.scrollHeight,
+    //         });
+
+    //         // 5️⃣ Download
+
+    //         const image = canvas.toDataURL("https://res.cloudinary.com/dmlhzurnk/image/upload/v1772476002/Congratulations_rpp8aw.png");
+
+    //         const link = document.createElement("a");
+    //         link.href = image;
+    //         link.download = "certificate.png";
+    //         link.click();
+
+    //     } catch (error) {
+    //         console.error("Download failed:", error);
+    //     }
+    // };
+
+
+
+
+    // const handleDownload = async () => {
+    //     if (!captureRef.current) return;
+
+    //     const canvas = await html2canvas(captureRef.current, {
+    //         scale: 3,          // High quality
+    //         useCORS: true,
+    //         allowTaint: true,
+    //         backgroundColor:null,
+    //         imageTimeout:0
+    //     });
+
+    //     const image = canvas.toDataURL("https://res.cloudinary.com/dmlhzurnk/image/upload/v1772476002/Congratulations_rpp8aw.png");
+
+    //     const link = document.createElement("a");
+    //     link.href = image;
+    //     link.download = "certificate.png";
+    //     link.click();
+    // };
+    const handleDownload = async (): Promise<void> => {
         if (!captureRef.current) return;
 
-        const canvas = await html2canvas(captureRef.current, {
-            scale: 2,          // High quality
-            useCORS: true,
-            allowTaint: true
+        const originalElement = captureRef.current;
+
+        const textElements = originalElement.querySelectorAll(".certificate-text");
+
+        textElements.forEach((el) => {
+            (el as HTMLElement).style.transform = "scale(3)";
+            (el as HTMLElement).style.transformOrigin = "center";
         });
 
-        const image = canvas.toDataURL("https://res.cloudinary.com/dmlhzurnk/image/upload/v1772476002/Congratulations_rpp8aw.png");
+        // 🔥 Clone element (UI disturb ആകില്ല)
+        const clonedElement = originalElement.cloneNode(true) as HTMLDivElement;
 
+        clonedElement.style.position = "fixed";
+        clonedElement.style.top = "0";
+        clonedElement.style.left = "0";
+        clonedElement.style.width = "2480px";
+        // clonedElement.style.height = "3508px";
+        clonedElement.style.zIndex = "-1";   // 🔥 important
+        // clonedElement.style.background = "white"; // 🔥 force white
+
+        document.body.appendChild(clonedElement);
+
+        const canvas = await html2canvas(clonedElement, {
+            scale: 1,
+            useCORS: true,
+            backgroundColor: "#ffffff",
+        });
+
+        document.body.removeChild(clonedElement); // cleanup
+        textElements.forEach((el) => {
+            (el as HTMLElement).style.transform = "scale(1)";
+        });
         const link = document.createElement("a");
-        link.href = image;
         link.download = "certificate.png";
+        link.href = canvas.toDataURL("image/png", 1.0);
         link.click();
     };
+
+
+
+
+
+    // lettest
+
 
     const VisuallyHiddenInput = styled('input')({
         clip: 'rect(0 0 0 0)',
@@ -46,8 +141,6 @@ const Certificate: FC<CertificateProps> = () => {
         whiteSpace: 'nowrap',
         width: 1,
     });
-
-
 
     return (<>
 
@@ -66,11 +159,11 @@ const Certificate: FC<CertificateProps> = () => {
                         transition={{ duration: 0.6 }}
                         src={imageUrl ? imageUrl : "https://randomuser.me/api/portraits/men/75.jpg"}
                         alt="Profile"
-                        className="absolute left-[16%] top-[55%] w-[26%] aspect-square  border-4 border-white shadow-xl object-cover"
+                        className="absolute left-[11%] top-[50%] w-[32%] aspect-square transform -rotate-3 skew-y-2   border-3 border-white shadow-xl object-cover"
                     />}
 
                     {/* Name Text */}
-                    <h1 className="absolute top-[78%] left-1/2 -translate-x-1/2 text-[3vw] font-bold text-mauve-800" style={{ fontFamily: 'custom-font', fontSize: "5vw" }}>
+                    <h1 className="absolute certificate-text top-[78%] left-1/2 -translate-x-1/2 text-[3vw] font-bold text-mauve-800" style={{ fontFamily: 'custom-font', fontSize: "5vw" }}>
                         {titleCase(para?.userName || "")}
                     </h1>
                 </div>
@@ -99,7 +192,7 @@ const Certificate: FC<CertificateProps> = () => {
                         multiple
                     />
                 </Button>
-                <Button onClick={handleDownload}  variant="contained" endIcon={<DownloadOutlined />}>
+                <Button onClick={handleDownload} variant="contained" endIcon={<DownloadOutlined />}>
                     Download
                 </Button>
             </div>
@@ -109,7 +202,20 @@ const Certificate: FC<CertificateProps> = () => {
 
 
 
+        {/* const element = document.getElementById("certificate");
 
+const originalWidth = element.style.width;
+
+element.style.width = "2480px"; // A4 300dpi width
+
+html2canvas(element, { scale: 1 }).then((canvas) => {
+  const link = document.createElement("a");
+  link.download = "certificate.png";
+  link.href = canvas.toDataURL("image/png", 1.0);
+  link.click();
+
+  element.style.width = originalWidth; // reset
+}); */}
 
 
 
@@ -124,9 +230,7 @@ const Certificate: FC<CertificateProps> = () => {
 
 
         {/* <Card >
-            <div ref={captureRef}>
-
-               
+            <div ref={captureRef}>          
                 <img
                     width={"100%"}
                     style={{ transition: 'all 0.3s ease', marginTop: '90px', backgroundImage: 'initial', position: 'relative' }}
