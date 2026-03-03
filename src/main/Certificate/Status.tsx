@@ -70,7 +70,7 @@ const Certificate: FC<CertificateProps> = () => {
                     />}
 
                     {/* Name Text */}
-                    <h1 className="absolute top-[78%] left-1/2 -translate-x-1/2 text-[3vw] font-bold text-mauve-800" style={{ fontFamily: 'custom-font', fontSize: "7vw" }}>
+                    <h1 className="absolute top-[78%] left-1/2 -translate-x-1/2 text-[3vw] font-bold text-mauve-800" style={{ fontFamily: 'custom-font', fontSize: "5vw" }}>
                         {titleCase(para?.userName || "")}
                     </h1>
                 </div>
