@@ -10,6 +10,18 @@
   font-family: custom-font;
 }
 
+:root {
+  --primary-brand-color: oklch(65.69% 0.223 23.91);
+  --background-subtle: oklch(98% 0.01 240);
+}
+:root {
+  /* Old oklch values (commented for reference) */
+  /* --primary-brand-color: oklch(65.69% 0.223 23.91); */
+  /* --background-subtle: oklch(98% 0.01 240); */
+  /* Converted hsl values */
+  --primary-brand-color: hsl(24, 100%, 61%);
+  --background-subtle: hsl(240, 25%, 98%);
+}
 /* .swiper {
   width: 600px;
   height: 300px;

@@ -3,7 +3,7 @@ import { Card, Image, Typography, Upload } from "antd";
 import type { FC } from "react";
 import { useParams } from "react-router";
 import { useRef, useState } from "react";
-import html2canvas from "html2canvas";
+import html2canvas from 'html2canvas-pro';
 import { titleCase } from "text-case";
 import { motion } from "framer-motion";
 import { Button, styled } from "@mui/material";
@@ -99,7 +99,7 @@ const Certificate: FC<CertificateProps> = () => {
                         multiple
                     />
                 </Button>
-                <Button onClick={handleDownload} variant="contained" endIcon={<DownloadOutlined />}>
+                <Button onClick={handleDownload}  variant="contained" endIcon={<DownloadOutlined />}>
                     Download
                 </Button>
             </div>
