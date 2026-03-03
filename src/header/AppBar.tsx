@@ -14,7 +14,7 @@ import { Container, List, ListItem, ListItemText } from '@mui/material';
 import { Link } from 'react-router';
 
 const pages = [{ name: 'Quick Result Check', RouteTo: '/Result' }, { name: 'Student Portal', RouteTo: '/' }, { name: 'Academic Excellence', RouteTo: '/' }, { name: "Expert Faculty", RouteTo: '/' }, { name: "Achievement Track", RouteTo: '/' }];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+const settings = [{ name: 'Profile', Router: "/" }, { name: 'Developer', Router: "/developer" }, { name: 'Logout', Router: "/" }];
 
 
 function ResponsiveAppBar() {
@@ -127,8 +127,11 @@ function ResponsiveAppBar() {
               onClose={handleCloseUserMenu}
             >
               {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography sx={{ textAlign: 'center' }}>{setting}</Typography>
+                <MenuItem key={setting.name} onClick={handleCloseUserMenu}>
+                  <Link to={setting.Router}>
+
+                    <Typography sx={{ textAlign: 'center' }}>{setting.name}</Typography>
+                  </Link>
                 </MenuItem>
               ))}
             </Menu>

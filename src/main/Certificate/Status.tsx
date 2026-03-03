@@ -1,5 +1,5 @@
 import { DownloadOutlined, UploadOutlined } from "@ant-design/icons";
-import { Card, Image, Typography, Upload } from "antd";
+
 import type { FC } from "react";
 import { useParams } from "react-router";
 import { useRef, useState } from "react";
@@ -7,7 +7,7 @@ import html2canvas from 'html2canvas-pro';
 import { titleCase } from "text-case";
 import { motion } from "framer-motion";
 import { Button, styled } from "@mui/material";
-import SendIcon from '@mui/icons-material/Send';
+
 
 interface CertificateProps { }
 

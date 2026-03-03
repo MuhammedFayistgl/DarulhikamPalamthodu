@@ -7,6 +7,7 @@ import { Routes, Route } from "react-router";
 import Result from './main/Result/Result';
 import ResponsiveAppBar from './header/AppBar';
 import Certificate from './main/Certificate/Status'; // Update path if Status component is located elsewhere
+import DeveloperInfo from './main/Developer/Developer';
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
         <Route path="/DarulhikamPalamthodu" element={<Home />} />
         <Route path="/Result" element={<Result />} />
         <Route path="/Status/:userName" element={<Certificate />} />
+        <Route path="/developer" element={<DeveloperInfo />} />
 
       </Routes>
 
