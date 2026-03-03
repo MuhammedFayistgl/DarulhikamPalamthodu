@@ -82,30 +82,70 @@ const Certificate: FC<CertificateProps> = () => {
     //     link.download = "certificate.png";
     //     link.click();
     // };
+    // const handleDownload = async (): Promise<void> => {
+    //     if (!captureRef.current) return;
+
+    //     const originalElement = captureRef.current;
+
+    //     const textElements = originalElement.querySelectorAll(".certificate-text");
+
+    //     textElements.forEach((el) => {
+    //         (el as HTMLElement).style.transform = "scale(2)";
+    //         (el as HTMLElement).style.transformOrigin = "center";
+    //     });
+
+    //     // 🔥 Clone element (UI disturb ആകില്ല)
+    //     const clonedElement = originalElement.cloneNode(true) as HTMLDivElement;
+
+    //     clonedElement.style.position = "fixed";
+    //     clonedElement.style.top = "0";
+    //     clonedElement.style.left = "0";
+    //     clonedElement.style.width = "2480px";
+    //     // clonedElement.style.height = "3508px";
+    //     clonedElement.style.zIndex = "-1";   // 🔥 important
+    //     // clonedElement.style.background = "white"; // 🔥 force white
+
+    //     document.body.appendChild(clonedElement);
+
+    //     const canvas = await html2canvas(clonedElement, {
+    //         scale: 4,
+    //         useCORS: true,
+    //         backgroundColor: "#ffffff",
+    //     });
+
+    //     document.body.removeChild(clonedElement); // cleanup
+    //     textElements.forEach((el) => {
+    //         (el as HTMLElement).style.transform = "scale(1)";
+    //     });
+    //     const link = document.createElement("a");
+    //     link.download = "certificate.png";
+    //     link.href = canvas.toDataURL("image/png", 1.0);
+    //     link.click();
+    // };
     const handleDownload = async (): Promise<void> => {
         if (!captureRef.current) return;
 
         const originalElement = captureRef.current;
 
-        const textElements = originalElement.querySelectorAll(".certificate-text");
-
-        textElements.forEach((el) => {
-            (el as HTMLElement).style.transform = "scale(2)";
-            (el as HTMLElement).style.transformOrigin = "center";
-        });
-
-        // 🔥 Clone element (UI disturb ആകില്ല)
+        // 🔥 Clone first (original touch ചെയ്യരുത്)
         const clonedElement = originalElement.cloneNode(true) as HTMLDivElement;
 
         clonedElement.style.position = "fixed";
         clonedElement.style.top = "0";
         clonedElement.style.left = "0";
         clonedElement.style.width = "2480px";
-        // clonedElement.style.height = "3508px";
-        clonedElement.style.zIndex = "-1";   // 🔥 important
-        // clonedElement.style.background = "white"; // 🔥 force white
+        // clonedElement.style.background = "#ffffff";
+        clonedElement.style.zIndex = "-9999";
 
         document.body.appendChild(clonedElement);
+
+        // 🔥 Scale ONLY inside clone
+        const textElements = clonedElement.querySelectorAll(".certificate-text");
+
+        textElements.forEach((el) => {
+            (el as HTMLElement).style.transform = "scale(3)";
+            (el as HTMLElement).style.transformOrigin = "center";
+        });
 
         const canvas = await html2canvas(clonedElement, {
             scale: 4,
@@ -113,16 +153,13 @@ const Certificate: FC<CertificateProps> = () => {
             backgroundColor: "#ffffff",
         });
 
-        document.body.removeChild(clonedElement); // cleanup
-        textElements.forEach((el) => {
-            (el as HTMLElement).style.transform = "scale(1)";
-        });
+        document.body.removeChild(clonedElement);
+
         const link = document.createElement("a");
         link.download = "certificate.png";
         link.href = canvas.toDataURL("image/png", 1.0);
         link.click();
     };
-
 
 
 
@@ -163,7 +200,7 @@ const Certificate: FC<CertificateProps> = () => {
                     />}
 
                     {/* Name Text */}
-                    <h1 className="absolute certificate-text top-[78%] left-1/2 -translate-x-1/2 text-[3vw] font-light text-mauve-800" style={{ fontFamily: 'custom-font-Unbroken', fontSize: "4vw" }}>
+                    <h1 className="absolute certificate-text top-[78%] left-1/2 -translate-x-1/2 text-[3vw] font-light text-mauve-800" style={{ fontFamily: 'custom-font-Unbroken', fontSize: "3.9vw" }}>
                         {titleCase(para?.userName || "")}
                     </h1>
                 </div>
