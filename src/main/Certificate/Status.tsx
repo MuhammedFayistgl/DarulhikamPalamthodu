@@ -148,7 +148,7 @@ const Certificate: FC<CertificateProps> = () => {
         <div className="min-h-screen flex flex-col items-start justify-center bg-gray-100 p-4 pt-[135px]">
             <div ref={captureRef}
                 className="relative inset-0 w-full max-w-[794px] aspect-[210/297] rounded-2xl overflow-hidden shadow-2xl bg-center bg-contain bg-no-repeat"
-                style={{ backgroundImage: "url('https://res.cloudinary.com/dmlhzurnk/image/upload/v1772476002/Congratulations_rpp8aw.png')" }}
+                style={{ backgroundImage: "url('https://res.cloudinary.com/dmlhzurnk/image/upload/v1772534009/Congratulations_Ex_1_rzuizu.jpg')" }}
             >
 
                 <div className="absolute inset-0">
