@@ -5,11 +5,18 @@
   src: url(../src/fonts/Photograph\ Signature.ttf);
   format: ('truetype');
 }
+@font-face {
+  font-family: custom-font-Unbroken;
+  src: url(../src/fonts/UnbrokenDreamDemoRegular.ttf);
+  format: ('truetype');
+}
 
 .custom-font {
   font-family: custom-font;
 }
-
+.custom-font-Unbroken {
+  font-family: custom-font-Unbroken;
+}
 :root {
   --primary-brand-color: oklch(65.69% 0.223 23.91);
   --background-subtle: oklch(98% 0.01 240);
@@ -22,6 +29,8 @@
   --primary-brand-color: hsl(24, 100%, 61%);
   --background-subtle: hsl(240, 25%, 98%);
 }
+
+/* url(../../New folder/unbroken-dream-demo/UnbrokenDreamDemoRegular.ttf) */
 /* .swiper {
   width: 600px;
   height: 300px;

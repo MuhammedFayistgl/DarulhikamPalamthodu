@@ -90,7 +90,7 @@ const Certificate: FC<CertificateProps> = () => {
         const textElements = originalElement.querySelectorAll(".certificate-text");
 
         textElements.forEach((el) => {
-            (el as HTMLElement).style.transform = "scale(3)";
+            (el as HTMLElement).style.transform = "scale(2)";
             (el as HTMLElement).style.transformOrigin = "center";
         });
 
@@ -108,7 +108,7 @@ const Certificate: FC<CertificateProps> = () => {
         document.body.appendChild(clonedElement);
 
         const canvas = await html2canvas(clonedElement, {
-            scale: 1,
+            scale: 4,
             useCORS: true,
             backgroundColor: "#ffffff",
         });
@@ -163,7 +163,7 @@ const Certificate: FC<CertificateProps> = () => {
                     />}
 
                     {/* Name Text */}
-                    <h1 className="absolute certificate-text top-[78%] left-1/2 -translate-x-1/2 text-[3vw] font-light text-mauve-800" style={{ fontFamily: 'custom-font', fontSize: "5vw" }}>
+                    <h1 className="absolute certificate-text top-[78%] left-1/2 -translate-x-1/2 text-[3vw] font-light text-mauve-800" style={{ fontFamily: 'custom-font-Unbroken', fontSize: "4vw" }}>
                         {titleCase(para?.userName || "")}
                     </h1>
                 </div>
