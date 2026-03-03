@@ -293,7 +293,7 @@ export const STUDENTS_DATA = [
     {
         "No": "",
         "id": 32,
-        "studentName": "Hafis AP",
+        "studentName": "Haviz AP",
         "currentClass": "2",
         "promotedTo": "3",
         "marks": 0,
@@ -320,7 +320,7 @@ export const STUDENTS_DATA = [
     {
         "No": "",
         "id": 35,
-        "studentName": "Hadi Muhammad K",
+        "studentName": "Hadhi Muhammad K",
         "currentClass": "2",
         "promotedTo": "3",
         "marks": 0,
@@ -412,7 +412,7 @@ export const STUDENTS_DATA = [
     {
         "No": "",
         "id": 45,
-        "studentName": "Aisha Batool P",
+        "studentName": "Aisha Bathool P",
         "currentClass": "2",
         "promotedTo": "3",
         "marks": 0,
@@ -439,7 +439,7 @@ export const STUDENTS_DATA = [
     {
         "No": "",
         "id": 48,
-        "studentName": "Jasva Fathima KP",
+        "studentName": "Jazva Fathima KP",
         "currentClass": "2",
         "promotedTo": "3",
         "marks": 0,
